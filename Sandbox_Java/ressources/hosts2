@@ -1,0 +1,20 @@
+# MANAGED BY PUPPET DO NOT MODIFY ON PUPPET AGENT (will be erased)
+
+# source on 10.198.164.192 /etc/puppet/environments/extra_files/hosts
+
+#
+
+####
+
+#
+
+127.0.0.1 localhost
+
+
+
+　
+
+
+10.198.164.194 dev-vdu
+
+10.198.164.240 dev-false

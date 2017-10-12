@@ -1,0 +1,136 @@
+
+https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwiv6J-U4MvSAhXHrxoKHQc9AzQQFggxMAI&url=http%3A%2F%2Frainingchain.com%2Ftutorial%2Fnodejs&usg=AFQjCNFHyK2EbU7IlEUzIByAgwojyiYlEw&sig2=pNR-tf_0yf5YFzhFT66s5g
+http://rubentd.com/blog/creating-a-multiplayer-game-with-node-js/
+
+Idées : 
+	Cartes avec des obstacles ? (=> cartes customs ?)
+
+Phase de jeu : 
+	Phase 1 : Journée
+		-> Les armes se rechargent
+		-> Vision totale
+		-> Voyante reconnait les Loup-Garous quand elle les approches
+		
+		
+	Phase 2 : Nuit
+		-> Vision diminuée
+		-> Loup-Garous se transforment sur commande
+		-> Sorcière peut réssussiter un villageois mort
+		
+	Phase spéciale : Nuit de Brouillard
+		-> Masque gris 
+		-> Transparence des Personnages dépend de leur vitesse 
+
+	Phase spéciale : Nuit de Pleine Lune
+		-> Masque rouge
+		-> Vitesse Loup-Garous * 1.25 
+		
+Personnages : 
+
+Personnages
+	-> Laisse une trainée de sang quand hp<20%
+
+Personnages:Loup-Garous 
+	-> Temps de transformation : 2 secondes / 0 secondes
+		-> Petite taches de sang
+	-> [Passif] Mange les non-Loup-Garous
+		-> 0,5 secondes de dégat pour tuer
+		-> Laisse un corps + trainée de sang dans la direction de fuite
+	-> [Passif] Reconnait les Loup-Garous
+	-> [Actif] Bondit en avant sur 90 px
+	-> Vision de nuit : 300 px
+	
+Loup-Garous :Grand Loup-Garous 
+	-> Vitesse x1.25
+	-> Temps de transformation : 0,5 secondes / 0 secondes
+	-> Vision de nuit : Totale
+	
+Personnages:Villageois
+	-> [Actif] Tire
+		-> Inflige des dégats
+		-> Repousse
+		-> Villageois qui tire est ralentit
+		-> Vision de nuit : 100 px
+		
+Villageois:Voyante
+	-> [Passif] Reconnait les Loup-Garous
+	
+Villageois:Sorcière 
+	-> [Passif] Réssussite un villageois
+	
+Villageois:Chasseur 
+	-> [Actif] 2 balles de fusils
+		-> Inflige des degats (1/2 loup || 1 villageois)
+		-> Repousse
+	
+Villageois:Trappeur 
+	-> [Actif] 3 pièges
+		-> Ralentissement de 60% pendant 1.5 secondes
+		-> Visible à 50 px de distance
+		
+	
+	
+Modes de jeu : 
+	Custom
+
+	4 joueurs : 
+		1 loup
+		3 villageois
+			1 sorcière
+	6 joueurs : 
+		2 loup
+		4 villageois
+			1 sorcière
+			1 chasseur
+			
+	8 joueurs : 
+		3 loup
+		5 villageois
+			1 sorcière
+			1 chasseur	
+			1 voyante
+			
+	12 joueurs : 
+		4 loup
+		8 villageois
+			1 sorcière
+			1 chasseur	
+			1 voyante
+		
+	16 joueurs : 
+		6 loup
+		10 villageois
+			1 sorcière
+			3 chasseur	
+			1 voyante
+		
+Interfaces : 
+	Menu
+		Creation d'un salon
+			Configuration du salon 
+				Modes de jeu
+					Werewolf
+						Rôles Custom?
+						Nb Joueurs avant lancement
+						Nb Joueurs Max
+			Valider
+		Selection d'un salon	
+			Liste des salons
+			Valider
+		
+	Salle d'attente
+		Chat
+		NbJoueurs attendus
+		Rejouer?
+		
+	Phase de jeu
+		Werewolf
+			Afficher une icone pour chaque rôle avec le nombre de représentant en vie
+			Afficher un timer de phase nuit/jour
+			Interface du jeu
+	
+
+		
+		
+		
+		

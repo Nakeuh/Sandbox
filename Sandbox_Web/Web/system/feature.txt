@@ -1,0 +1,11 @@
+Créer un nouveau System
+	- name
+
+Editer un Systeme
+	- récupérer machines via fichiers hosts
+	- Creer/deplacer des element (boite/fleche)
+	- Click gauche sur un element : Editer
+		- Ajouter une url pour checker le running state
+			-Ping
+			-Metrics
+		

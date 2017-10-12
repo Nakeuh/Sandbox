@@ -1,0 +1,527 @@
+# MANAGED BY PUPPET DO NOT MODIFY ON PUPPET AGENT (will be erased)
+
+# source on 10.198.164.192 /etc/puppet/environments/extra_files/hosts
+
+#
+
+####
+
+#
+
+127.0.0.1  localhost
+
+10.134.32.145 srvsonar01 srvsonar01.vly.tcfr.thales svgnvsonar01.clb.tcfr.thales
+
+#ACTIVE DIRECTORIES (AD)
+
+#test
+
+192.168.110.0 dev-ad-0
+
+192.168.110.1 dev-ad-1
+
+192.168.110.2 dev-ad-2
+
+192.168.110.3 dev-ad-3
+
+192.168.110.4 dev-ad-4
+
+192.168.111.0 ivl-ad-0
+
+192.168.111.1 ivl-ad-1
+
+192.168.111.2 ivl-ad-2
+
+192.168.111.3 ivl-ad-3
+
+192.168.111.4 ivl-ad-4
+
+192.168.111.5 ivl-server
+
+192.168.112.0 prd-ad-0
+
+192.168.112.1 prd-ad-1
+
+192.168.112.2 prd-ad-2
+
+192.168.112.3 prd-ad-3
+
+192.168.112.4 prd-ad-4
+
+#SPARK
+
+192.168.110.10 dev-spark-master-0
+
+192.168.110.11 dev-spark-master-1
+
+192.168.110.12 dev-spark-master-2
+
+192.168.110.13 dev-spark-master-3
+
+192.168.110.14 dev-spark-master-4
+
+192.168.111.10 ivl-spark-master-0
+
+192.168.111.11 ivl-spark-master-1
+
+192.168.111.12 ivl-spark-master-2
+
+192.168.111.13 ivl-spark-master-3
+
+192.168.111.14 ivl-spark-master-4
+
+192.168.112.10 prod-spark-master-0
+
+192.168.112.11 prod-spark-master-1
+
+192.168.112.12 prod-spark-master-2
+
+192.168.112.13 prod-spark-master-3
+
+192.168.112.14 prod-spark-master-4
+
+#CASSANDRA
+
+192.168.110.20 dev-cassandra-0
+
+192.168.110.21 dev-cassandra-1
+
+192.168.110.22 dev-cassandra-2
+
+192.168.110.23 dev-cassandra-3
+
+192.168.110.24 dev-cassandra-4
+
+192.168.111.20 ivl-cassandra-0
+
+192.168.111.21 ivl-cassandra-1
+
+192.168.111.22 ivl-cassandra-2
+
+192.168.111.23 ivl-cassandra-3
+
+192.168.111.24 ivl-cassandra-4
+
+192.168.112.20 prd-cassandra-0
+
+192.168.112.21 prd-cassandra-1
+
+192.168.112.22 prd-cassandra-2
+
+192.168.112.23 prd-cassandra-3
+
+192.168.112.24 prd-cassandra-4
+
+# KAFKA
+
+192.168.110.30 dev-kafka-0
+
+192.168.110.31 dev-kafka-1
+
+192.168.110.32 dev-kafka-2
+
+192.168.110.33 dev-kafka-3
+
+192.168.110.34 dev-kafka-4
+
+192.168.110.41 dev-proxy
+
+192.168.111.30 ivl-kafka-0
+
+192.168.111.31 ivl-kafka-1
+
+192.168.111.32 ivl-kafka-2
+
+192.168.111.33 ivl-kafka-3
+
+192.168.111.34 ivl-kafka-4
+
+192.168.112.30 prd-kafka-0
+
+192.168.112.31 prd-kafka-1
+
+192.168.112.32 prd-kafka-2
+
+192.168.112.33 prd-kafka-3
+
+192.168.112.34 prd-kafka-4
+
+#HYPERVISEUR/TVS
+
+ 
+
+#COTS
+
+ 
+
+192.168.110.50 dev-cots-0
+
+192.168.110.51 dev-cots-1
+
+192.168.110.52 dev-cots-2
+
+192.168.110.53 dev-cots-3
+
+192.168.110.54 dev-cots-4
+
+192.168.111.50 ivl-cots-0
+
+192.168.111.51 ivl-cots-1
+
+192.168.111.52 ivl-cots-2
+
+192.168.111.53 ivl-cots-3
+
+192.168.111.54 ivl-cots-4
+
+192.168.112.50 prd-cots-0
+
+192.168.112.51 prd-cots-1
+
+192.168.112.52 prd-cots-2
+
+192.168.112.53 prd-cots-3
+
+192.168.112.54 prd-cots-4
+
+#TVS
+
+ 
+
+192.168.110.60 dev-tvs-0
+
+192.168.110.61 dev-tvs-1
+
+192.168.110.62 dev-tvs-2
+
+192.168.110.63 dev-tvs-3
+
+192.168.110.64 dev-tvs-4
+
+192.168.111.60 ivl-tvs-0
+
+192.168.111.61 ivl-tvs-1
+
+192.168.111.62 ivl-tvs-2
+
+192.168.111.63 ivl-tvs-3
+
+192.168.111.64 ivl-tvs-4
+
+192.168.112.60 prd-tvs-0
+
+192.168.112.61 prd-tvs-1
+
+192.168.112.62 prd-tvs-2
+
+192.168.112.63 prd-tvs-3
+
+192.168.112.64 prd-tvs-4
+
+#NETWORK VIDEO RECORDER (NVR)
+
+192.168.110.70 dev-nvr-0
+
+192.168.110.71 dev-nvr-1
+
+192.168.110.72 dev-nvr-2
+
+192.168.110.73 dev-nvr-3
+
+192.168.110.74 dev-nvr-4
+
+192.168.111.70 ivl-nvr-0
+
+192.168.111.71 ivl-nvr-1
+
+192.168.111.72 ivl-nvr-2
+
+192.168.111.73 ivl-nvr-3
+
+192.168.111.74 ivl-nvr-4
+
+192.168.112.70 prd-nvr-0
+
+192.168.112.71 prd-nvr-1
+
+192.168.112.72 prd-nvr-2
+
+192.168.112.73 prd-nvr-3
+
+192.168.112.74 prd-nvr-4
+
+#HYPERVISEUR
+
+192.168.110.80 dev-hyp-0
+
+192.168.110.81 dev-hyp-1
+
+192.168.110.82 dev-hyp-2
+
+192.168.110.83 dev-hyp-3
+
+192.168.110.84 dev-hyp-4
+
+192.168.111.80 ivl-hyp-0
+
+192.168.111.81 ivl-hyp-1
+
+192.168.111.82 ivl-hyp-2
+
+192.168.111.83 ivl-hyp-3
+
+192.168.111.84 ivl-hyp-4
+
+192.168.112.80 prd-hyp-0
+
+192.168.112.81 prd-hyp-1
+
+192.168.112.82 prd-hyp-2
+
+192.168.112.83 prd-hyp-3
+
+192.168.112.84 prd-hyp-4
+
+       #EC3 SERVICES
+
+192.168.110.90 dev-ec3-0
+
+192.168.110.91 dev-ec3-1
+
+192.168.110.92 dev-ec3-2
+
+192.168.110.93 dev-ec3-3
+
+192.168.110.94 dev-ec3-4
+
+192.168.111.90 ivl-ec3-0
+
+192.168.111.91 ivl-ec3-1
+
+192.168.111.92 ivl-ec3-2
+
+192.168.111.93 ivl-ec3-3
+
+192.168.111.94 ivl-ec3-4
+
+192.168.112.90 prd-ec3-0
+
+192.168.112.91 prd-ec3-1
+
+192.168.112.92 prd-ec3-2
+
+192.168.112.93 prd-ec3-3
+
+192.168.112.94 prd-ec3-4
+
+ 
+
+#ARCGIS
+
+192.168.110.100 dev-gis-0
+
+192.168.110.101 dev-gis-1
+
+192.168.110.102 dev-gis-2
+
+192.168.110.103 dev-gis-3
+
+192.168.110.104 dev-gis-4
+
+192.168.111.100 ivl-gis-0
+
+192.168.111.101 ivl-gis-1
+
+192.168.111.102 ivl-gis-2
+
+192.168.111.103 ivl-gis-3
+
+192.168.111.104 ivl-gis-4
+
+192.168.112.100 prd-gis-0
+
+192.168.112.101 prd-gis-1
+
+192.168.112.102 prd-gis-2
+
+192.168.112.103 prd-gis-3
+
+192.168.112.104 prd-gis-4
+
+ 
+
+#SHAREPOINT (SHP)
+
+   
+
+192.168.110.120 dev-shp-0
+
+192.168.110.121 dev-shp-1
+
+192.168.110.122 dev-shp-2
+
+192.168.110.123 dev-shp-3
+
+192.168.110.124 dev-shp-4
+
+192.168.111.120 ivl-shp-0
+
+192.168.111.121 ivl-shp-1
+
+192.168.111.122 ivl-shp-2
+
+192.168.111.123 ivl-shp-3
+
+192.168.111.124 ivl-shp-4
+
+192.168.112.120 prd-shp-0
+
+192.168.112.121 prd-shp-1
+
+192.168.112.122 prd-shp-2
+
+192.168.112.123 prd-shp-3
+
+192.168.112.124 prd-shp-4
+
+ 
+
+#TOMCAT
+
+192.168.110.140 dev-tomcat-0
+
+192.168.110.141 dev-tomcat-1
+
+192.168.110.142 dev-tomcat-2
+
+192.168.110.143 dev-tomcat-3
+
+192.168.110.144 dev-tomcat-4
+
+192.168.111.140 ivl-tomcat-0
+
+192.168.111.141 ivl-tomcat-1
+
+192.168.111.142 ivl-tomcat-2
+
+192.168.111.143 ivl-tomcat-3
+
+192.168.111.144 ivl-tomcat-4
+
+192.168.112.140 prd-tomcat-0
+
+192.168.112.141 prd-tomcat-1
+
+192.168.112.142 prd-tomcat-2
+
+192.168.112.143 prd-tomcat-3
+
+192.168.112.144 prd-tomcat-4
+
+#SIMUL
+
+192.168.110.160 dev-simul-0
+
+192.168.110.161 dev-simul-1
+
+192.168.110.162 dev-simul-2
+
+192.168.110.163 dev-simul-3
+
+192.168.110.164 dev-simul-4
+
+192.168.111.160 ivl-simul-0
+
+192.168.111.161 ivl-simul-1
+
+192.168.111.162 ivl-simul-2
+
+192.168.111.163 ivl-simul-3
+
+192.168.111.164 ivl-simul-4
+
+192.168.112.160 prd-simul-0
+
+192.168.112.161 prd-simul-1
+
+192.168.112.162 prd-simul-2
+
+192.168.112.163 prd-simul-3
+
+192.168.112.164 prd-simul-4
+
+#PTV
+
+#PTV-W (windows)
+
+#PTV-C (centos)
+
+192.168.159.131 dev-ptv-w-1
+
+192.168.159.220 dev-ptv-c-0
+
+192.168.159.221 dev-ptv-c-1
+
+　
+
+#VM with access to RIE
+
+10.198.164.190 dev-cdo
+
+192.168.110.190 dev-cdo
+
+192.168.159.190 dev-cdo
+
+　
+
+#-- 10.198.164.191
+
+#10.198.164.192 ec3-prod
+
+192.168.110.192         ec3-prod
+
+#-- 10.198.164.193
+
+#-- 10.198.164.194
+
+10.198.164.195 dev-vca
+
+192.168.110.195 dev-vca
+
+192.168.159.195 dev-vca
+
+10.198.164.196 dev-eab
+
+192.168.110.196 dev-eab
+
+192.168.159.196 dev-eab
+
+10.198.164.197 dev-ash
+
+192.168.110.197 dev-ash
+
+192.168.159.197 dev-ash
+
+# free # 10.198.164.198
+
+#-- 10.198.164.199
+
+# free # 10.198.164.210
+
+# free # 10.198.164.211  
+
+# free # 10.198.164.212   
+
+# free # 10.198.164.213    
+
+10.198.164.214     dev-geo1 #Development geocortex
+
+# free # 10.198.164.215      
+
+# free # 10.198.164.216       
+
+# free # 10.198.164.217        
+
+#-- 10.198.164.218
+
+10.198.164.219      dev-geo2 #Development geocortex
