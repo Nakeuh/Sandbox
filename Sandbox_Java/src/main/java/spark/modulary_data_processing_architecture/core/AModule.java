@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture;
+package spark.modulary_data_processing_architecture.core;
 
 import java.io.Serializable;
 

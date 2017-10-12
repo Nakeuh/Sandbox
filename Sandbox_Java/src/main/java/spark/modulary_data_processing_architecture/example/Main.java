@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture;
+package spark.modulary_data_processing_architecture.example;
 
 
 import java.util.List;
@@ -10,11 +10,13 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import scala.Tuple2;
-import spark.utils.Constantes;
-import spark.utils.SparkUtils;
-import spark.utils.Utils;
+import spark.modulary_data_processing_architecture.core.SparkUtils;
+import spark.modulary_data_processing_architecture.example.modules.paris_market.MarketModule;
+import spark.modulary_data_processing_architecture.example.modules.twitter.TwitterModule;
+import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
+import spark.modulary_data_processing_architecture.example.modules.utils.Utils;
 
-public class Computing implements Constantes{
+public class Main implements Constantes{
 	
 	public static void main(String[] args) {
 

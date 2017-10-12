@@ -1,6 +1,5 @@
-package spark.utils;
+package spark.modulary_data_processing_architecture.example.modules.utils;
 
-import spark.modulary_data_processing_architecture.ZoneID;
 import twitter4j.GeoLocation;
 
 public class ZoneUtils implements Constantes{

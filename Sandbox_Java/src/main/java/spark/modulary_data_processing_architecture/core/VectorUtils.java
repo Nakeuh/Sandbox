@@ -1,4 +1,4 @@
-package spark.utils;
+package spark.modulary_data_processing_architecture.core;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.apache.spark.mllib.feature.IDF;
 import org.apache.spark.mllib.feature.IDFModel;
 import org.apache.spark.mllib.linalg.Vector;
 
-import spark.modulary_data_processing_architecture.VectorizedTweet;
+import spark.modulary_data_processing_architecture.example.modules.twitter.VectorizedTweet;
 
 public class VectorUtils {
 

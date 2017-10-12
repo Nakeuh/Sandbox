@@ -1,4 +1,4 @@
-package spark.utils;
+package spark.modulary_data_processing_architecture.example.modules.utils;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

@@ -1,4 +1,4 @@
-package spark.utils;
+package spark.modulary_data_processing_architecture.example.modules.utils;
 
 import twitter4j.GeoLocation;
 
@@ -18,9 +18,6 @@ public interface Constantes {
 	//Taille d'une case, en degrés: 0,00908375
 	//Si 15 cases de hauteur, nelle hauteur d'extent: 0,13625625
 	//Borne Sud: 48,77490975
-
-	public static final String WINUTIL_PATH ="";
-
 
 	public static final String TRAINING_DATA_PATH = "C:/Users/Public/SoftwareContest/trainingDatas";
 	public static final String SIMULATION_DATA_PATH = "C:/Users/Public/SoftwareContest/simulatedDatas";

@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture;
+package spark.modulary_data_processing_architecture.example.modules.paris_market;
 
 import java.io.Serializable;
 
@@ -7,8 +7,8 @@ import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 
 import scala.Tuple2;
-import spark.utils.Constantes;
-import spark.utils.MarketUtils;
+import spark.modulary_data_processing_architecture.core.AModule;
+import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
 
 public class MarketModule extends AModule implements Constantes,Serializable {
 

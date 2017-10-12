@@ -1,4 +1,4 @@
-package spark.utils;
+package spark.modulary_data_processing_architecture.example.modules.paris_market;
 
 
 import java.util.Calendar;
@@ -11,6 +11,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import scala.Tuple2;
+import spark.modulary_data_processing_architecture.example.modules.utils.MapUtils;
+import spark.modulary_data_processing_architecture.example.modules.utils.ZoneUtils;
 import twitter4j.GeoLocation;
 
 public class MarketUtils {

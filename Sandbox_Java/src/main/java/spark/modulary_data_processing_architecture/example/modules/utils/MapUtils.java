@@ -1,4 +1,4 @@
-package spark.utils;
+package spark.modulary_data_processing_architecture.example.modules.utils;
 
 import java.util.ArrayList;
 import java.util.List;

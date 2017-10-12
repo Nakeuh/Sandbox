@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture;
+package spark.modulary_data_processing_architecture.example.modules.paris_market;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import org.apache.spark.storage.StorageLevel;
 import org.apache.spark.streaming.receiver.Receiver;
 
-import spark.utils.Constantes;
+import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
 
 public class CustomMarchesStream extends Receiver<String> implements Constantes {
 

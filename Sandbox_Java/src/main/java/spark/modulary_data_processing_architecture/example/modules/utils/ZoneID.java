@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture;
+package spark.modulary_data_processing_architecture.example.modules.utils;
 
 import scala.Serializable;
 import scala.Tuple2;

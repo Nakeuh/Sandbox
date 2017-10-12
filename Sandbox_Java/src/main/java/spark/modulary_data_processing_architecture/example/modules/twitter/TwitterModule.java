@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture;
+package spark.modulary_data_processing_architecture.example.modules.twitter;
 
 import java.util.List;
 
@@ -12,11 +12,13 @@ import org.apache.spark.streaming.twitter.TwitterUtils;
 
 import scala.Tuple2;
 import scala.Tuple3;
-import spark.utils.Constantes;
-import spark.utils.StringUtils;
-import spark.utils.Utils;
-import spark.utils.VectorUtils;
-import spark.utils.ZoneUtils;
+import spark.modulary_data_processing_architecture.core.AModule;
+import spark.modulary_data_processing_architecture.core.VectorUtils;
+import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
+import spark.modulary_data_processing_architecture.example.modules.utils.StringUtils;
+import spark.modulary_data_processing_architecture.example.modules.utils.Utils;
+import spark.modulary_data_processing_architecture.example.modules.utils.ZoneID;
+import spark.modulary_data_processing_architecture.example.modules.utils.ZoneUtils;
 import twitter4j.Status;
 import twitter4j.TwitterObjectFactory;
 
