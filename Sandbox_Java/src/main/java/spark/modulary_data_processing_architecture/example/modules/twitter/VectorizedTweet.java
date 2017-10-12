@@ -2,6 +2,12 @@ package spark.modulary_data_processing_architecture.example.modules.twitter;
 
 import org.apache.spark.mllib.linalg.Vector;
 
+/**
+ * Object to store a tweet in mllib vector format
+ * @author victor
+ *
+ * @param <LabelType>
+ */
 public class VectorizedTweet<LabelType> {
 	
 	private LabelType label;

@@ -13,7 +13,6 @@ import org.apache.spark.streaming.twitter.TwitterUtils;
 import scala.Tuple2;
 import scala.Tuple3;
 import spark.modulary_data_processing_architecture.core.AModule;
-import spark.modulary_data_processing_architecture.core.VectorUtils;
 import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
 import spark.modulary_data_processing_architecture.example.modules.utils.StringUtils;
 import spark.modulary_data_processing_architecture.example.modules.utils.Utils;
@@ -30,9 +29,9 @@ public class TwitterModule extends AModule implements Constantes {
 	private StreamingKMeans model;
 	private JavaDStream<Status> inputTweetStream;
 
-	public TwitterModule(JavaStreamingContext ssc, double pertinence , boolean simulated) {
-		super(ssc,  pertinence);
-		
+	public TwitterModule(JavaStreamingContext ssc, double pertinence, boolean simulated) {
+		super(ssc, pertinence);
+
 		initModel();
 		trainModel();
 
@@ -51,58 +50,59 @@ public class TwitterModule extends AModule implements Constantes {
 
 	private void trainModel() {
 		// Generate training Stream
-		JavaDStream<Vector> trainingStream = ssc.textFileStream(TRAINING_DATA_PATH_SPARK).map(line -> StringUtils.customSplit(line))
-				.transform(rdd -> {
-					return VectorUtils.transformListStringToVector(rdd,dimensions);
+		JavaDStream<Vector> trainingStream = ssc.textFileStream(TRAINING_DATA_PATH_SPARK)
+				.map(line -> StringUtils.customSplit(line)).transform(rdd -> {
+					return VectorUtils.transformListStringToVector(rdd, dimensions);
 				});
 
 		// Train the model
 		model.trainOn(trainingStream);
 	}
 
+	/**
+	 * Calcule a score for each geographical zone Use a KMeans clustering to detect
+	 * if a tweet is 'casual' or 'dangerous'
+	 * 
+	 * score = nbDangerousTweetInZOne *
+	 * (numberTweetReceived/minimalNumberTweetInZone)
+	 */
 	@Override
 	protected JavaPairDStream<String, Double> computeStream() {
 		// Filter and parse inputStream to vectorStream with labels
-		JavaDStream<VectorizedTweet<Status>> tweetStream = inputTweetStream.window(Durations.seconds(30), Durations.seconds(10))
+		JavaDStream<VectorizedTweet<Status>> tweetStream = inputTweetStream
+				.window(Durations.seconds(30), Durations.seconds(10))
 				.filter(tweet -> ZoneUtils.isInParis(tweet.getGeoLocation()))
 				.mapToPair(tweet -> new Tuple2<Status, List<String>>(tweet, StringUtils.customSplit(tweet.getText())))
-				.transform(rdd -> VectorUtils.<Status>transformListStringToLabeledVector(rdd, dimensions));//.transformListStringToLabeledVector(rdd,dimensions));
-
+				.transform(rdd -> VectorUtils.<Status>transformListStringToLabeledVector(rdd, dimensions));
 		// Affect each data to a cluster, thanks to the trained KMeans model
 		JavaDStream<Tuple3<Status, Integer, ZoneID>> clusterizedZonedTweets = model
 				.predictOnValues(tweetStream.mapToPair(lp -> new Tuple2<Status, Vector>(lp.label(), lp.features())))
-				.map(clusterizedTweet -> 
-					new Tuple3<Status, Integer, ZoneID> (
-							clusterizedTweet._1,
-							clusterizedTweet._2,
-							ZoneUtils.getZoneID(clusterizedTweet._1.getGeoLocation())
-					)
-				);
+				.map(clusterizedTweet -> new Tuple3<Status, Integer, ZoneID>(clusterizedTweet._1, clusterizedTweet._2,
+						ZoneUtils.getZoneID(clusterizedTweet._1.getGeoLocation())));
 
-		JavaPairDStream<String, Double> outputStream = clusterizedZonedTweets
-				.mapToPair(zonedClusterizedTweet -> new Tuple2<String, Tuple2<Double, Integer>>(
-						zonedClusterizedTweet._3().getID(),
-						new Tuple2<Double, Integer>((double) zonedClusterizedTweet._2(), 1))
-				)
-				.mapToPair(t->{
+		JavaPairDStream<String, Double> outputStream = clusterizedZonedTweets.mapToPair(
+				zonedClusterizedTweet -> new Tuple2<String, Tuple2<Double, Integer>>(zonedClusterizedTweet._3().getID(),
+						new Tuple2<Double, Integer>((double) zonedClusterizedTweet._2(), 1)))
+				.mapToPair(t -> {
 
 					return t;
 				})
-				
+
 				// aggregate scores by zone
 
-				.reduceByKey((a, b) -> new Tuple2<Double, Integer>(1 / ((a._1 + b._1)* Math.pow(10,-10) + 1 ), a._2 + b._2)) 
+				.reduceByKey(
+						(a, b) -> new Tuple2<Double, Integer>(1 / ((a._1 + b._1) * Math.pow(10, -10) + 1), a._2 + b._2))
 				// calculate confidence score (depend of the number of tweets)
 				.mapToPair(t -> {
 					double scoreWithConfidence = 0;
-					if(t._2._2>maxTweets)
+					if (t._2._2 > maxTweets)
 						scoreWithConfidence = t._2._1;
-					else 
+					else
 						scoreWithConfidence = t._2._1 * (t._2._2 / maxTweets);
 
 					return new Tuple2<String, Double>(t._1, scoreWithConfidence);
 				});
-		
+
 		return outputStream;
 	}
 

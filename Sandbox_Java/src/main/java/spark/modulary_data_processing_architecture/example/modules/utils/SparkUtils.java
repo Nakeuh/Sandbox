@@ -1,4 +1,4 @@
-package spark.modulary_data_processing_architecture.core;
+package spark.modulary_data_processing_architecture.example.modules.utils;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -6,8 +6,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.streaming.Duration;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
-
-import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
 
 public class SparkUtils {
 	public static final String WINUTIL_PATH = "";

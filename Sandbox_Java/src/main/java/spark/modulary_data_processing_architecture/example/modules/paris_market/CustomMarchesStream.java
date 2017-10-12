@@ -8,6 +8,13 @@ import org.apache.spark.streaming.receiver.Receiver;
 
 import spark.modulary_data_processing_architecture.example.modules.utils.Constantes;
 
+/**
+ * Receiver that will get paris market datas from a file. (datas are supposed to
+ * be refreshed by a simulator)
+ * 
+ * @author victor
+ *
+ */
 public class CustomMarchesStream extends Receiver<String> implements Constantes {
 
 	private static final long serialVersionUID = 1L;

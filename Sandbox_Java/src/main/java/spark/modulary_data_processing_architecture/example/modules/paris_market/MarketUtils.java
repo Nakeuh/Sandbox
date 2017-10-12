@@ -15,6 +15,11 @@ import spark.modulary_data_processing_architecture.example.modules.utils.MapUtil
 import spark.modulary_data_processing_architecture.example.modules.utils.ZoneUtils;
 import twitter4j.GeoLocation;
 
+/**
+ * Format paris market datas
+ * @author victor
+ *
+ */
 public class MarketUtils {
 	public static List<Tuple2<String, Integer>> numberOfmarketOpenInEachZone(String json) {
 		JSONArray markets = stringToJSONArrayMarches(json);

@@ -18,6 +18,10 @@ public class MarketModule extends AModule implements Constantes,Serializable {
 		super(ssc, pertinence);
 	}
 
+	/**
+	 * Calcule a score for each geographical zone : 
+	 * score = nbMarketCurrentlyOpenInZOne / MaxNumberOfMarket
+	 */
 	@Override
 	protected JavaPairDStream<String, Double> computeStream() {
 		return ssc.receiverStream(new CustomMarchesStream()).window(Durations.seconds(10))
